@@ -1,0 +1,191 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html{
+  height: 100%;
+}
+body {
+  width: 100%;
+  height: 100%;
+  background-image: url('../images/117.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.gameBoard {
+  position: relative;
+  width: 90%;
+  height: 500px;
+  margin: 50px auto 0;
+  background: #fff;
+  box-shadow: 0px 0px 10px 1px #d6d6d6;
+}
+
+.gameBoard .players {
+  display: flex;
+  justify-content: space-between;
+  height: 100%;
+}
+.playerOne {
+  flex-basis: 50%;
+}
+.content{
+  width: 60%;
+  margin: 40px auto 0;
+  padding: 10px 40px 50px;
+  text-align: center;
+}
+.playerOne h3,
+.playerTwo h3{
+  color: #5f5f5f;
+  font-family: Baskerville;
+  font-weight: lighter;
+  font-size: 40px;
+}
+.playerTwo {
+  flex-basis: 50%;
+}
+.globalBoard {
+  color: #fa4501;
+  padding: 15px 0 40px;
+  font-family: Baskerville;
+  font-weight: 900;
+  font-size: 65px;
+}
+.roundBoard{
+  width: 50%;
+  margin: 40px auto 0;
+  background: #fa4501;
+  text-align: center;
+  padding: 5px 0 5px;
+}
+.roundBoard h6{
+  color:  #fff;
+  font-family: Baskerville;
+  font-size: 20px;
+  padding-top: 10px;
+}
+.rollBoard{position: absolute;width: 35%;left: 30%;}
+.rollBoard .board{
+  height: 300px;
+  color:white;
+  text-align: center;
+  padding: 20px;
+}
+.board img{
+  height: 100%;
+}
+.rollBoard .buttons{
+  height: 40%;
+  color:#fff;
+}
+.buttons .roll,
+.buttons .hold{
+  width: 32%;
+  margin: 0  auto 0;
+  text-align: center;
+  padding: 14px 0;
+}
+.rollBoard .roll h4,
+.rollBoard .hold h4{
+  cursor: pointer;
+  background: #5d4823;
+  padding: 10px 0;
+  text-transform: capitalize;
+}
+.turn{
+  background: #f7eeec;
+}
+.on{
+  background: orangered;
+  display: inline-block;
+  width: 10%;
+  height: 30px;
+  border-radius: 100%;
+}
+@media only screen and (max-width: 1100px) {
+  .rollBoard .board {
+    padding: 40px 0;
+  }
+  .on{
+    width: 13%;
+    height: 25px;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  body{
+    height: 100%;
+  }
+  .rollBoard .board {
+    padding: 60px 0;
+  }
+  .content {
+    width: 55%;
+    padding: 10px 20px 50px;
+  }
+  .playerOne h3,
+   .playerTwo h3 {
+    font-size: 35px;
+  }
+  .globalBoard {
+    font-size: 55px;
+  }
+  .roundBoard h6 {
+    font-size: 28px;
+    padding-top: 0;
+  }
+  .roundBoard {
+    width: 70%;
+  }
+  .on{
+    width: 13%
+    height: 25px;
+  }
+}
+@media only screen and (max-width: 760px) {
+  .rollBoard {
+    position: absolute;
+    left: 32%;
+  }
+  .rollBoard .board {
+    padding: 80px 0;
+  }
+  .on{
+    width: 10%;
+    height: 15px;
+  }
+  .playerOne h3,
+   .playerTwo h3 {
+    font-size: 25px;
+  }
+  .roundBoard {
+    margin: 60px auto 0;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .gameBoard{
+    height: 450px;
+  }
+  .content {
+    padding: 10px 20px 20px;
+    width: 100%;
+    text-align: left;
+  }
+   .playerTwo .content{
+     text-align: right;
+   }
+  .playerOne h3,
+   .playerTwo h3 {
+    font-size: 20px;
+  }
+  .buttons .roll, .buttons .hold {
+    width: 50%;
+  }
+  .on{
+    width: 7%;
+    height: 8px;
+  }
+}
