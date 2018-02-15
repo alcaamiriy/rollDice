@@ -3,24 +3,90 @@
   padding: 0;
   box-sizing: border-box;
 }
-html{
+
+html {
   height: 100%;
 }
+
 body {
   width: 100%;
   height: 100%;
   background-image: url('../images/117.jpg');
-  background-repeat: no-repeat;
+  background-repeat: repeat-y;
   background-size: cover;
+  background-position: left center;
+}
+
+.container {
+  width: 90%;
+  margin: 0 auto 0;
+}
+
+nav {
+  margin-top: 20px;
+  line-height: 40px;
+}
+
+.navbar .menus {
+  display: flex;
+}
+
+.menus ul.topMenu {
+  list-style: none;
+  width: 100%;
+}
+
+ul.left {
+  flex-basis: 60%;
+}
+
+ul.left li {
+  flex-basis: 33%;
+}
+
+ul.right {
+  flex-basis: 40%;
+  display: flex;
+}
+
+ul.right li {
+  text-align: center;
+}
+ul.topMenu li .dice-img {
+  width: 14%;
+  height: 95px;
+  border-radius: 100%;
+  overflow: hidden;
+  margin-left: 2%;
+}
+ul.topMenu li .dice-img a {
+  padding: 0;
+}
+ul.topMenu li .dice-img a img{
+  width: 100%;
+  height: 100%;
+}
+ul.topMenu li a {
+  text-decoration: none;
+  line-height: 50px;
+  text-align: center;
+  font-family: lato;
+  font-weight: lighter;
+  font-size: 16px;
+  color: #adadad;
+  padding: 7px 20px;
+}
+ul.topMenu li a:hover {
+  border-bottom: 1px solid white;
+  transition: .5s;
 }
 
 .gameBoard {
   position: relative;
-  width: 90%;
-  height: 500px;
-  margin: 50px auto 0;
-  background: #fff;
-  box-shadow: 0px 0px 10px 1px #d6d6d6;
+  width: 85%;
+  height: 450px;
+  margin: 0px auto 0;
+  box-shadow: 0px 0px 1px .5px #d6d6d6;
 }
 
 .gameBoard .players {
@@ -28,106 +94,304 @@ body {
   justify-content: space-between;
   height: 100%;
 }
+
 .playerOne {
   flex-basis: 50%;
+  background: #d6d6d6;
 }
-.content{
+
+.content {
   width: 60%;
   margin: 40px auto 0;
   padding: 10px 40px 50px;
-  text-align: center;
 }
-.playerOne h3,
-.playerTwo h3{
+
+.playerOne h3, .playerTwo h3 {
   color: #5f5f5f;
   font-family: Baskerville;
   font-weight: lighter;
   font-size: 40px;
 }
+
 .playerTwo {
   flex-basis: 50%;
+  background: #d6d6d6;
 }
+
 .globalBoard {
   color: #fa4501;
   padding: 15px 0 40px;
   font-family: Baskerville;
   font-weight: 900;
   font-size: 65px;
+  text-align: center;
 }
-.roundBoard{
+
+.roundBoard {
   width: 50%;
-  margin: 40px auto 0;
+  margin: 0px auto 0;
   background: #fa4501;
   text-align: center;
   padding: 5px 0 5px;
 }
-.roundBoard h6{
-  color:  #fff;
+
+.roundBoard h6 {
+  color: #fff;
   font-family: Baskerville;
   font-size: 20px;
   padding-top: 10px;
 }
-.rollBoard{position: absolute;width: 35%;left: 30%;}
-.rollBoard .board{
+
+.rollBoard {
+  position: absolute;
+  width: 35%;
+  left: 33%;
+}
+
+.rollBoard .board {
   height: 300px;
-  color:white;
+  color: white;
   text-align: center;
   padding: 20px;
 }
-.board img{
+
+.board img {
   height: 100%;
 }
-.rollBoard .buttons{
+
+.rollBoard .buttons {
   height: 40%;
-  color:#fff;
+  color: #fff;
 }
-.buttons .roll,
-.buttons .hold{
+
+.buttons .roll, .buttons .hold {
   width: 32%;
-  margin: 0  auto 0;
+  margin: 0 auto 0;
   text-align: center;
   padding: 14px 0;
 }
-.rollBoard .roll h4,
-.rollBoard .hold h4{
+
+.rollBoard .roll h4, .rollBoard .hold h4 {
   cursor: pointer;
   background: #5d4823;
   padding: 10px 0;
   text-transform: capitalize;
 }
-.turn{
+.game-rules{
+  padding: 40px 0 0;
+  width: 95%;
+  margin: 0 auto 3px;
+}
+.game-rules h3{
+  width: 50%;
+  font-family: Arial;
+  font-weight: lighter;
+  font-size: 30px;
+  background: #d6d6d6;
+  cursor: pointer;
+  padding: 5px 5px;
+}
+.rules{
+  width: 50%;
+  background: #e8e8e8;
+  padding: 0;
+  max-height: 0px;
+  opacity: 0;
+  overflow: hidden;;
+}
+.game-rules .rules p{
+  padding: 10px 0;
+  line-height: 1.3;
+  font-family: Baskerville;
+}
+
+.turn {
   background: #f7eeec;
 }
-.on{
+
+.on {
   background: orangered;
   display: inline-block;
   width: 10%;
   height: 30px;
   border-radius: 100%;
 }
-@media only screen and (max-width: 1100px) {
-  .rollBoard .board {
-    padding: 40px 0;
+.won{
+  animation: won .7s ease-in-out infinite;
+
+}
+.won h3{
+  color: #fff;
+}
+.won .on{
+  background: #fff;
+}
+.won .pl1globalScore,
+.won .pl2globalScore{
+  color: #fff;
+}
+@keyframes won {
+  0%{
+    background: none;
+    opacity: 0.5;
   }
-  .on{
+  50%{
+    background: #fa4501;
+    opacity: 0.7;
+  }
+  100%{
+    background: none;
+  }
+}
+.slideDown{
+  -webkit-transition: all 1s;
+  -o-transition: all 1s;
+  transition: all 1s;
+  max-height: 700px;
+  padding: 10px 5px;
+  opacity: 1;
+}
+.slideUp {
+  -webkit-transition: all 1s;
+  -o-transition: all 1s;
+  transition: all 1s;
+  max-height: 0;
+  padding: 0;
+  opacity: 0;
+}
+
+/*  ABOUT PAGE */
+.info {
+  background: #efefef5c;
+  width: 50%;
+  height: 500px;
+  margin: 50px 0 0;
+}
+.info h4{
+  text-align: center;
+  padding: 25px 0 5px;
+  font-size: 25px;
+  font-family: serif, Arial;
+  border-bottom: 1px solid #dedede;
+  letter-spacing: 10px;
+  text-transform: uppercase;
+}
+.info p{
+  padding: 10px;
+  color: #000;
+  word-spacing: 2px;
+  line-height: 1.3;
+  font-size: 18px;
+}
+/* Contact Me Page */
+.contact{
+  width: 100%;
+  margin: 85px 0 0;
+  color: #fff;
+  height: 550px;
+  background: #ffa50063;
+}
+.contact-details{
+  width: 60%;
+  margin: 0 auto 0;
+  padding: 40px 0;
+}
+.back-to-main {
+  margin-bottom: 20px;
+}
+.back-to-main a{
+  padding: 10px 5px 10px 30px;
+  color: #000;
+  font-size: 18px;
+  background: #fff;
+  border-radius: 50% 0  0 50%;
+
+}
+.contact-details h4{
+}
+.contact-details .social{
+  
+}
+.social ul {
+  display: flex;
+}
+.social li {
+  display: flex;
+  padding: 5px 0;
+  line-height: 40px;
+  flex-basis: 33%;
+}
+.social li a{
+  margin-left: 15px;
+  text-decoration: none;
+  color: #fff;
+}
+.social li img{
+  height: 40px;
+  line-height: 40px;
+  background: #fff;
+  border-radius: 100%;
+}
+
+@media only screen and (max-width: 1100px) {
+  ul.topMenu li .dice-img a img {
+    height: 60px;
+  }
+  ul.topMenu li .dice-img {
+    width: 10%;
+    height: 60px;
+  }
+  ul.left {
+    flex-basis: 50%;
+  }
+  ul.right {
+    flex-basis: 50%;
+  }
+  .rollBoard .board {
+    padding: 20px 0;
+    height: 270px;
+  }
+  .on {
     width: 13%;
     height: 25px;
   }
 }
 
 @media only screen and (max-width: 900px) {
-  body{
+  body {
     height: 100%;
   }
+  ul.left {
+    flex-basis: 40%;
+  }
+  ul.right {
+    flex-basis: 60%;
+  }
+  ul.topMenu li .dice-img {
+    width: 20%;
+    height: 50px;
+  }
+  ul.topMenu li .dice-img a img {
+    height: 50px;
+  }
+  .game-rules h3{
+    width: 65%;
+  }
+  .rules {
+    width: 65%;
+  }
+  .gameBoard{
+    height: 380px;
+  }
   .rollBoard .board {
-    padding: 60px 0;
+    padding: 30px 0;
+    height: 250px;
   }
   .content {
     width: 55%;
     padding: 10px 20px 50px;
   }
-  .playerOne h3,
-   .playerTwo h3 {
+  .playerOne h3, .playerTwo h3 {
     font-size: 35px;
   }
   .globalBoard {
@@ -139,53 +403,175 @@ body {
   }
   .roundBoard {
     width: 70%;
+    margin-top: 40px;
   }
-  .on{
-    width: 13%
-    height: 25px;
+  .on {
+    width: 13% height: 25px;
+  }
+  /* ABOUT ME PAGE */
+  .info {
+    background: #f7f7f782;
+    width: 70%;
+    height: 390px;
+    margin: 23% 0 0;
+  }
+  .info p {
+    color: #000000;
   }
 }
+
 @media only screen and (max-width: 760px) {
+  ul.left {
+    flex-basis: 30%;
+  }
+  ul.right {
+    flex-basis: 70%;
+  }
+  ul.topMenu li .dice-img {
+    width: 30%;
+    height: 55px;
+  }
+  ul.topMenu li .dice-img a img {
+    height: 55px;
+  }
+  .game-rules h3{
+    width: 75%;
+  }
+  .rules {
+    width: 75%;
+  }
+  .gameBoard{
+    height: 350px;
+  }
   .rollBoard {
-    position: absolute;
     left: 32%;
+    height: 250px;
   }
   .rollBoard .board {
-    padding: 80px 0;
+    padding: 40px 0;
+    height: 200px;
   }
-  .on{
+  .on {
     width: 10%;
     height: 15px;
   }
-  .playerOne h3,
-   .playerTwo h3 {
+  .playerOne h3, .playerTwo h3 {
     font-size: 25px;
   }
   .roundBoard {
     margin: 60px auto 0;
   }
-}
-@media only screen and (max-width: 500px) {
-  .gameBoard{
-    height: 450px;
+  .roundBoard {
+    margin: 20px auto 0;
   }
+  /* ABOUT ME PAGE */
+  .info {
+    margin-top: 90%;
+    width: 100%;
+  }
+  /*  CONTACT PAGE */
+  .contact-details{
+    width: 80%;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .content {
+    width: 100%;
+  }
+  .game-rules h3{
+    width: 100%;
+  }
+  .rules {
+    width: 100%;
+  }
+   .playerTwo h3{
+     text-align: right;
+   }
+   .gameBoard {
+     height: 300px;
+   }
+   .globalBoard{
+     padding-bottom: 10px;
+   }
+   .rollBoard .board {
+    padding: 40px 0;
+    height: 180px;
+  }
+  /* ABOUT ME PAGE */
+  .info {
+    margin-top: 100%;
+  }
+  /*  CONTACT PAGE */
+  .contact{
+    height: 650px;
+  }
+  .contact-details{
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .navbar .menus {
+    display: block;
+    position: relative;
+  }
+  .menus ul.topMenu{
+
+  }
+  ul.right {
+    display: block;
+    margin-top: -50px;
+  }
+  ul.right li a{
+    line-height: 30px;
+    padding-top: 5px;
+    background: #d6d6d6;
+    color: #222;
+  }
+  ul.topMenu li .dice-img {
+    width: 15%;
+    height: 60px;
+  }
+  ul.topMenu li .dice-img a img {
+    height: 60px;
+  }
+  .gameBoard {
+    height: 250px;
+  }
+  .rollBoard .board {
+   padding: 30px 0;
+   height: 125px;
+ }
   .content {
     padding: 10px 20px 20px;
     width: 100%;
     text-align: left;
   }
-   .playerTwo .content{
-     text-align: right;
-   }
-  .playerOne h3,
-   .playerTwo h3 {
+  .playerTwo .content {
+    text-align: right;
+  }
+  .roundBoard {
+    margin-top: 0;
+    width: 70%;
+  }
+  .playerOne h3, .playerTwo h3 {
     font-size: 20px;
   }
   .buttons .roll, .buttons .hold {
     width: 50%;
   }
-  .on{
+  .on {
     width: 7%;
     height: 8px;
+  }
+  /* CONTACT PAGE  */
+  .contact{
+    height: 700px;
+  }
+  .contact-details{
+    width: 100%;
+  }
+  .social ul{
+    display: block;
   }
 }

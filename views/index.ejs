@@ -1,0 +1,65 @@
+<% include ./partials/header %>
+  <% include ./partials/nav %>
+  <div class="container" >
+    <div class="game-rules">
+      <h3>About The Game</h3>
+      <div class="rules">
+          <p>
+            This is a simple roll dicing game that allows a player to roll the dice,
+            then have have the number on it as a points
+          </p>
+          <p>
+            A player can roll the dice as long as he/she wants in each turn round of play
+            and gain more points, but if the number shown on the dice is <em>1</em> or
+            <em>Ace</em>  that player will loose all points in that round and the turn will
+            swtich to other player
+          </p>
+          <p>If a player want to hold the points he/she will have to click <strong>Hold</strong>
+            button and the point in that round will be added to the overall points
+          </p>
+          <p>
+            The winner will be the first player to reach <strong>100 points</strong>
+          </p>
+      </div>
+  </div>
+  </div>
+  <div class="gameBoard">
+    <div class="rollBoard">
+      <div class="board">
+        <img src="" alt="">
+      </div>
+      <div class="buttons">
+        <div class="roll">
+          <h4>roll</h4>
+        </div>
+        <div class="hold">
+          <h4>Hold</h4>
+        </div>
+      </div>
+    </div>
+    <div class="players">
+      <div class="playerOne">
+        <div class="content">
+          <h3>Player1 <span></span></h3>
+          <div class="pl1globalScore globalBoard">0</div>
+          <div class="pl1roundScore  roundBoard">
+            <h5>CURRENT</h5>
+            <h6>0</h6>
+          </div>
+        </div>
+      </div>
+      <div class="playerTwo">
+        <div class="content">
+          <h3>Player2  <span></span></h3>
+          <div class="pl2globalScore globalBoard">0</div>
+          <span class="onp2"></span>
+          <div class="pl2roundScore roundBoard">
+            <h5>CURRENT</h5>
+            <h6>0</h6>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <% include ./partials/footer %>
